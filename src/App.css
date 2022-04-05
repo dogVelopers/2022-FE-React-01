@@ -1,3 +1,5 @@
+
+
 * {
   box-sizing: border-box;
 }
@@ -14,4 +16,31 @@ body {
 
 h1 {
   text-align: center;
+  margin-bottom: 15%;
+}
+.main{
+  text-align: center;
+}
+.highlight{
+  color: blueviolet;
+  font-weight: bold;
+}
+.character-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.characters{
+  width: 20%;
+  border-radius: 50%;
+  
+}
+.characters2{
+  width:150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  right: 25px;
 }
