@@ -1,27 +1,24 @@
+import { useState } from "react";
 import "./App.css";
-import Person from "./components/Person";
-
-// const people = ["신수연", "박지영", "박지영 메롱"];
-
-const people = [
-  { name: "신수연", age: 24 },
-  { name: "박지영", age: 24 },
-]; // objecy 만들기
 
 function App() {
+  const [num, setNum] = useState<number>(0);
+  function onClickUpButton() {
+    setNum((prev) => prev + 1);
+  }
+  function onClickDownButton() {
+    setNum((prev) => prev - 1);
+  }
+
   return (
     <div>
       <h1>DogVelopers 22</h1>
-      <h2>하이 아임 수연</h2>
 
-      {/* array.map((각 뚯하는 변수명) => {jsx를 반환하는 코드}) */}
-      {people.map((person, index) => {
-        return <Person key={index} name={person.name} age={person.age} />;
-      })}
+      <h2 className={num % 2 == 0 ? "changeBlack" : "changeRed"}>{num}</h2>
+      <button onClick={onClickUpButton}>up</button>
+      <button onClick={onClickDownButton}>Down</button>
     </div>
   );
 }
 
 export default App;
-
-//

@@ -15,3 +15,10 @@ body {
 h1 {
   text-align: center;
 }
+
+.changeBlack {
+  color: black;
+}
+.changeRed {
+  color: red;
+}
