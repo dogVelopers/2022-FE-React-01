@@ -21,3 +21,13 @@ npm start
 # or
 yarn start
 ```
+
+## Study
+
+[TypeScript / 2022.03.31](docs/README.md)
+
+
+
+## Result
+
+![result](https://user-images.githubusercontent.com/63100352/161068019-67bf119f-42c7-4a44-ac3d-952da603725c.png)
