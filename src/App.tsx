@@ -1,21 +1,47 @@
-import Person from "component/Person";
 import "App.css";
-
-const people = [
-  { name: "한슬희", age: 22 },
-  { name: "김철수", age: 23 },
-  { name: "김영수", age: 25 },
-];
+import { useState, useEffect, useRef } from "react";
 
 function App() {
+  const [number, setNumber] = useState(0);
+  const EVEN = "even";
+  const ODD = "odd";
+  const title = document.querySelector(".numText");
+  
+  // rerendering => state
+  function onClickUpButton() {
+    setNumber((prev) => prev + 1);
+  }
+
+  function onClickDownButton() {
+    setNumber((prev) => prev - 1);
+  }
+
+  useEffect(() => {
+    if (number % 2 === 0) {
+      title?.classList.remove(ODD);
+      title?.classList.add(EVEN);
+    } else {
+      title?.classList.remove(EVEN);
+      title?.classList.add(ODD);
+    }
+  }, [number]);
+
+  // useEffect(() => {
+  //   console.log(number);
+  //   setTimeout(() => {
+  //     console.log("hi");
+  //   }, 1000);
+
+  //   return () => {
+  //     console.log("exit");
+  //   };
+  // }, [number]);
+
   return (
-    <div className="wrapper">
-      <h1>개발자 명단</h1>
-      <div className="listWrapper">
-        {people.map((each) => {
-          return <Person name={each.name} age={each.age} />;
-        })}
-      </div>
+    <div>
+      <h2 className="numText">{number}</h2>
+      <button onClick={onClickUpButton}>up</button>
+      <button onClick={onClickDownButton}>down</button>
     </div>
   );
 }

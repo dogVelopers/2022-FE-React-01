@@ -36,3 +36,11 @@ body {
   background-color: #19cf99;
   border-radius: 8px;
 }
+
+.odd {
+  color: black;
+}
+
+.even {
+  color: red;
+}
